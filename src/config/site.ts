@@ -19,7 +19,6 @@ export const CTA_HWID_SPOOFER =
 export const DISCORD_URL = 'https://discord.com/invite/wmFY3xVtwm';
 
 export const SITE_ASSETS = {
-  logo: '/logo.svg',
   ogImage: '/images/gameplay/marvel-rivals-visuals.webp',
   heroPoster: '/images/gameplay/marvel-rivals-screenshot-1.webp',
   screenshots: [

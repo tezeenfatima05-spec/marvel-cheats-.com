@@ -40,7 +40,6 @@ export function organizationSchema() {
     '@type': 'Organization',
     name: 'Marvel Cheats',
     url: `${SITE_ORIGIN}/`,
-    logo: `${SITE_ORIGIN}/logo.svg`,
     email: SUPPORT_EMAIL,
     ...(sameAs.length > 0 ? { sameAs } : {}),
     contactPoint: [
@@ -214,10 +213,6 @@ export function articleSchema(input: {
     publisher: {
       '@type': 'Organization',
       name: 'Marvel Cheats',
-      logo: {
-        '@type': 'ImageObject',
-        url: `${SITE_ORIGIN}/logo.svg`,
-      },
     },
     mainEntityOfPage: {
       '@type': 'WebPage',
