@@ -14,15 +14,26 @@ export function stripRasterExt(src: string): string {
   return src.replace(RASTER_EXT, '');
 }
 
+/** Pre-exported .webp assets (no `-{width}.webp` variants in public/). */
+function isStandaloneWebp(src: string): boolean {
+  return /\.webp$/i.test(src) && !/-\d+\.webp$/i.test(src);
+}
+
 export function webpSrc(src: string, width: number): string {
+  if (isStandaloneWebp(src)) return src;
   return `${stripRasterExt(src)}-${width}.webp`;
 }
 
 export function responsiveSrcSet(src: string, widths: readonly number[] = DEFAULT_IMAGE_WIDTHS): string {
+  if (isStandaloneWebp(src)) {
+    const w = widths[widths.length - 1] ?? widths[0] ?? 640;
+    return `${src} ${w}w`;
+  }
   return widths.map((width) => `${webpSrc(src, width)} ${width}w`).join(', ');
 }
 
 /** Smallest variant — used as img src so Lighthouse and no-srcset clients get the right size. */
 export function defaultWebpSrc(src: string, widths: readonly number[]): string {
+  if (isStandaloneWebp(src)) return src;
   return webpSrc(src, widths[0] ?? 640);
 }

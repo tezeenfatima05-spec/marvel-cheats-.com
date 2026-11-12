@@ -1,10 +1,9 @@
-export declare const CHECKOUT_URLS: {
-  readonly dota2: string;
-  readonly skinChanger: string;
+export const CHECKOUT_URLS: {
+  readonly marvelRivals: string;
+  readonly cloudDma: string;
   readonly hwidSpoofer: string;
-  readonly ugc: string;
 };
 
-export declare const CHECKOUT_PATH_REDIRECTS: ReadonlyMap<string, string>;
+export const CHECKOUT_PATH_REDIRECTS: Map<string, string>;
 
-export declare function resolveCheckoutPathRedirect(pathname: string): string | null;
+export function resolveCheckoutPathRedirect(pathname: string): string | null;

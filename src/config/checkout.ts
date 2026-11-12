@@ -9,10 +9,9 @@ export type CheckoutProduct = keyof typeof CHECKOUT;
 
 /** URL slug for /go/[slug]/ checkout redirect pages. */
 export const CHECKOUT_SLUGS: Record<CheckoutProduct, string> = {
-  dota2: 'dota-2',
-  skinChanger: 'skin-changer',
+  marvelRivals: 'marvel-rivals',
+  cloudDma: 'cloud-dma',
   hwidSpoofer: 'hwid-spoofer',
-  ugc: 'ugc',
 };
 
 export const CHECKOUT_SLUG_TO_PRODUCT = Object.fromEntries(
@@ -20,28 +19,23 @@ export const CHECKOUT_SLUG_TO_PRODUCT = Object.fromEntries(
 ) as Record<string, CheckoutProduct>;
 
 /** Internal checkout path shown to users (hides external URL on hover). */
-export function checkoutPath(product: CheckoutProduct = 'dota2'): string {
+export function checkoutPath(product: CheckoutProduct = 'marvelRivals'): string {
   return `/go/${CHECKOUT_SLUGS[product]}/`;
 }
 
-/** Default product checkout redirect (replaces legacy Discord CTAs). */
-export const PRIMARY_CHECKOUT_PATH = checkoutPath('dota2');
+/** Default product checkout redirect. */
+export const PRIMARY_CHECKOUT_PATH = checkoutPath('marvelRivals');
 
 /** Map internal product slugs to checkout redirect paths. */
 export function checkoutForSlug(slug: string): string {
   switch (slug) {
-    case 'unlock-all':
-      return checkoutPath('skinChanger');
+    case 'cloud-dma':
+      return checkoutPath('cloudDma');
     case 'hwid-spoofer':
       return checkoutPath('hwidSpoofer');
-    case 'ugc':
-    case 'account-recovery':
-      return checkoutPath('ugc');
-    case 'lite':
-    case 'pro':
-    case 'elite':
+    case 'marvel-rivals':
     default:
-      return checkoutPath('dota2');
+      return checkoutPath('marvelRivals');
   }
 }
 
@@ -57,21 +51,14 @@ export function resolveCheckoutHref(href: string): string {
     }
   }
 
-  // Legacy / encoded product paths → internal checkout
   if (href.includes('%2Fproducts%2Fcloud-dma') || href.includes('/products/cloud-dma')) {
-    return checkoutPath('dota2');
-  }
-  if (href.includes('%2Fproducts%2Fskin-changer') || href.includes('/products/skin-changer')) {
-    return checkoutPath('skinChanger');
+    return checkoutPath('cloudDma');
   }
   if (href.includes('%2Fproducts%2Fhwid-spoofer') || href.includes('/products/hwid-spoofer')) {
     return checkoutPath('hwidSpoofer');
   }
-  if (href.includes('%2Fproducts%2Fugc') || href.includes('/products/ugc')) {
-    return checkoutPath('ugc');
-  }
-  if (href.includes('%2Fproducts%2Fdota-2') || href.includes('/products/dota-2')) {
-    return checkoutPath('dota2');
+  if (href.includes('%2Fproducts%2Fmarvel-rivals') || href.includes('/products/marvel-rivals')) {
+    return checkoutPath('marvelRivals');
   }
 
   return href;

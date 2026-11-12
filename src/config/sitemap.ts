@@ -16,7 +16,12 @@ function pathnameFromUrl(url: string): string {
 export function sitemapSerialize(item: SitemapItem): SitemapItem | undefined {
   const path = pathnameFromUrl(item.url);
 
-  if (path.includes('/404') || path.startsWith('/go/') || path.includes('/rss.xml')) {
+  if (
+    path.includes('/404') ||
+    path.startsWith('/go/') ||
+    path.includes('/rss.xml') ||
+    path.includes('dota-2')
+  ) {
     return undefined;
   }
 

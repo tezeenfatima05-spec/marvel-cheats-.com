@@ -1,6 +1,5 @@
 /**
  * Central titles/descriptions for high-traffic routes.
- * After Search Console shows impressions, edit the matching path here and redeploy.
  */
 
 export interface PageSeoEntry {
@@ -10,59 +9,64 @@ export interface PageSeoEntry {
 
 export const PAGE_SEO: Record<string, PageSeoEntry> = {
   '/': {
-    // gscNote: Keep primary keyword "dota 2 cheats" near front; trim if title truncates in SERP.
-    title: 'Dota 2 Cheats & Hacks | Scripts, Map Hack & ESP',
+    title: 'Marvel Rivals Cheats — Aimbot, ESP & Skin Changer',
     description:
-      'Dota 2 cheats for PC ranked: scripts, map hack, zoom hack, and skin changer tiers updated every patch at dotacheats.com.',
+      'Explore Marvel Rivals cheats for PC featuring customizable aimbot, hero ESP, triggerbot, auto abilities, combo creator, enemy radar, skin changer, and Cloud DMA support.',
   },
-  '/products/dota-2-cheats/': {
-    title: 'Dota 2 Elite Cheats & Utility Products',
+  '/products/marvel-rivals-cheats/': {
+    title: 'Marvel Rivals Cheats, Cloud DMA & HWID Spoofer',
     description:
-      'Elite dota 2 cheats plus HWID spoofer, UGC tools, and Skin Changer utilities for Steam ranked on dotacheats.com.',
+      'Marvel Rivals cheats for PC plus Cloud DMA and HWID Spoofer utilities—aimbot, hero ESP, radar, combo tools, and skin changer on marvelcheats.com.',
   },
-  '/products/dota-2-cheats/elite/': {
-    title: 'Dota 2 Elite Cheats | Bots & Full Map Hack',
+  '/products/marvel-rivals-cheats/marvel-rivals/': {
+    title: 'Marvel Rivals Cheats | Aimbot, ESP & Combo Creator',
     description:
-      'Elite tier: auto farm bot, kill steal, skin changer, full map hack suite, and priority patch delivery.',
+      'Full Marvel Rivals cheat menu: aimbot, hero ESP, triggerbot, auto abilities, combo creator, radar, skin changer, and Cloud DMA support.',
   },
-  '/products/dota-2-cheats/utilities/': {
-    title: 'Dota 2 Utilities | HWID, UGC & Skin Changer',
+  '/products/marvel-rivals-cheats/cloud-dma/': {
+    title: 'Cloud DMA for Marvel Rivals',
     description:
-      'Choose HWID Spoofer, UGC, or Skin Changer—when each utility fits and links to full product pages.',
+      'Cloud DMA product for Marvel Rivals—hardware-isolated stack, portal setup, and module pairing when compatibility requirements are met.',
+  },
+  '/products/marvel-rivals-cheats/hwid-spoofer/': {
+    title: 'HWID Spoofer | Marvel Rivals Utilities',
+    description:
+      'HWID Spoofer utility with restore-point workflow, compatibility scan, and post-spoof verification before Marvel Rivals.',
+  },
+  '/products/marvel-rivals-cheats/utilities/': {
+    title: 'Marvel Rivals Utilities | Cloud DMA & HWID',
+    description:
+      'Compare Cloud DMA and HWID Spoofer—when each utility fits and links to full product pages on marvelcheats.com.',
   },
   '/blog/': {
-    title: 'Dota 2 Cheats Guides & Patch Notes',
+    title: 'Marvel Rivals Guides & Setup Notes',
     description:
-      'Setup guides, Lite vs Pro comparisons, VAC patch checklists, and ranked config tips for dota cheats.',
+      'Setup guides for aimbot, ESP, triggerbot, combo creator, Cloud DMA, HWID tools, and patch-day checks for Marvel Rivals cheats.',
   },
   '/forum/': {
-    title: 'Dota 2 Community Forum | DotaCheats',
-    description: 'Join Dota players to discuss heroes, builds, patch changes, guides, and community moments.',
+    title: 'Marvel Rivals Community Forum | Marvel Cheats',
+    description: 'Discuss Marvel Rivals cheats setup, configs, patch changes, and feature tips with the community.',
   },
   '/faq/': {
-    title: 'FAQ | Dota 2 Cheats, Products & Setup',
+    title: 'FAQ | Marvel Rivals Cheats & Utilities',
     description:
-      'Answers on cheat tiers, map hack, scripts, HWID tools, checkout, and blog guides at dotacheats.com.',
+      'Answers on Marvel Rivals cheats features, Cloud DMA, HWID Spoofer, checkout, and setup on marvelcheats.com.',
   },
   '/terms/': {
-    title: 'Terms & Conditions | DotaCheats',
-    description:
-      'Purchase terms, license use, and refund policy for DotaCheats products sold through dotacheats.com.',
+    title: 'Terms & Conditions | Marvel Cheats',
+    description: 'Purchase terms, license use, and refund policy for Marvel Cheats products sold through marvelcheats.com.',
   },
   '/privacy/': {
-    title: 'Privacy Policy | DotaCheats',
-    description:
-      'How dotacheats.com uses analytics, cookies, and contact data when you browse or request support.',
+    title: 'Privacy Policy | Marvel Cheats',
+    description: 'How marvelcheats.com uses analytics, cookies, and contact data when you browse or request support.',
   },
   '/about/': {
-    title: 'About DotaCheats',
-    description:
-      'What DotaCheats publishes: Dota 2 cheat tiers, utilities, guides, and status notes at dotacheats.com.',
+    title: 'About Marvel Cheats',
+    description: 'What Marvel Cheats publishes: Marvel Rivals cheats, utilities, guides, and status notes at marvelcheats.com.',
   },
   '/support/': {
-    title: 'Support | DotaCheats',
-    description:
-      'Get help with loader setup, HWID, and checkout for Dota 2 cheat tiers and utilities.',
+    title: 'Support | Marvel Cheats',
+    description: 'Get help with loader setup, HWID, Cloud DMA, and checkout for Marvel Rivals products.',
   },
 };
 
