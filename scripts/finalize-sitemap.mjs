@@ -53,4 +53,9 @@ const indexXml = `<?xml version="1.0" encoding="UTF-8"?>
 fs.writeFileSync(path.join(dist, 'sitemap-index.xml'), indexXml, 'utf8');
 fs.writeFileSync(path.join(dist, 'sitemap-0.xml'), formatted, 'utf8');
 
-console.log(`Sitemap finalized: ${urlCount} URLs → ${relDist}/sitemap.xml`);
+const publicDir = path.join(root, 'public');
+fs.mkdirSync(publicDir, { recursive: true });
+fs.writeFileSync(path.join(publicDir, 'sitemap.xml'), formatted, 'utf8');
+fs.writeFileSync(path.join(publicDir, 'sitemap-index.xml'), indexXml, 'utf8');
+
+console.log(`Sitemap finalized: ${urlCount} URLs → ${relDist}/sitemap.xml (+ public/ for local dev)`);
